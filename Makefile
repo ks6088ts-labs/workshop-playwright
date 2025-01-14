@@ -116,8 +116,15 @@ TRACE_ZIP ?= generated/tests-test-example-py-test-get-started-link-chromium/trac
 show-trace: ## show trace
 	uv run playwright show-trace $(TRACE_ZIP)
 
-URL ?= https://demo.playwright.dev/todomvc
+PLAYWRIGHT_URL ?= https://demo.playwright.dev/todomvc
 .PHONY: codegen
 codegen: ## generate test code
-	uv run playwright codegen $(URL) \
+	uv run playwright codegen $(PLAYWRIGHT_URL) \
 		--output tests/test_codegen.py
+
+LOCUST_URL ?= http://localhost:8080
+.PHONY: locust
+locust: ## run locust
+	uv run locust \
+		--locustfile scripts/locustfile.py \
+		--host $(LOCUST_URL)

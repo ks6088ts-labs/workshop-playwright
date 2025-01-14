@@ -33,3 +33,28 @@ npm install
 # Run tests
 npx playwright test --config=playwright.service.config.ts --workers=20
 ```
+
+## [locust](https://docs.locust.io/en/stable/quickstart.html)
+
+To try out Locust, run HTTP server locally and run Locust.
+
+```shell
+# Install dependencies
+go install github.com/ks6088ts-labs/workshop-kubernetes@latest
+
+# Run HTTP server
+workshop-kubernetes sandbox http --port 8080
+```
+
+Run Locust and open the browser.
+
+```shell
+# Specify the failure percentage
+export FLAKY_PERCENT=30
+
+# Run locust
+make locust
+
+# Open browser to confirm that the failure percentage is almost 40% as specified above
+# http://localhost:8089/
+```
