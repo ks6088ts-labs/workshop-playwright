@@ -81,7 +81,7 @@ To do this, we need to configure Cline vscode extension to use the Playwright MC
 }
 ```
 
-4. Open GitHub Copilot Edits and pass the following prompt.
+4. Open Cline and pass the following prompt.
 
 ```
 Playwright's MCP server to create a Playwright test script in tests/test_hatena_bookmark.py that:
@@ -95,11 +95,13 @@ Please reference other test code implementations as needed.
 
 ```shell
 $ uv run pytest -v tests/test_hatena_bookmark.py --capture=no --verbose
-tests/test_hatena_bookmark.py::test_hatena_bookmark_hotentry[chromium] [
+$ uv run pytest -v tests/test_hatena_bookmark.py --capture=no --verbose
+
+tests/test_hatena_bookmark.py::test_hatena_bookmark [
   {
     "title": "「あんなパフォーマンスがあっていいのか」高校野球の入場行進で異例の行動　「軍隊式」に疑問を持ったチームに驚きの反響 ｜ 47NEWS",
     "url": "https://nordot.app/1276520592422387913",
-    "bookmark_count": 295
+    "bookmarks": 317
   },
   {
     "title": "VSCodeでドキュメント作成するならまずこれを入れよう - Qiita",
